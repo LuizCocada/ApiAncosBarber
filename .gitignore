@@ -21,7 +21,6 @@ bin/Debug/net9.0/appsettings.json
 appsettings.Development.json
 appsettings.json
 
-program.cs
 
 # User-specific files
 *.rsuser
