@@ -6,7 +6,6 @@
 /Users/luizribeiro/Desktop/Project-C#/SaaSAncosBarber/AncosBarber/bin/Debug/net9.0/AncosBarber.runtimeconfig.json
 /Users/luizribeiro/Desktop/Project-C#/SaaSAncosBarber/AncosBarber/bin/Debug/net9.0/AncosBarber.dll
 /Users/luizribeiro/Desktop/Project-C#/SaaSAncosBarber/AncosBarber/bin/Debug/net9.0/AncosBarber.pdb
-/Users/luizribeiro/Desktop/Project-C#/SaaSAncosBarber/AncosBarber/bin/Debug/net9.0/Microsoft.AspNetCore.OpenApi.dll
 /Users/luizribeiro/Desktop/Project-C#/SaaSAncosBarber/AncosBarber/bin/Debug/net9.0/Microsoft.OpenApi.dll
 /Users/luizribeiro/Desktop/Project-C#/SaaSAncosBarber/AncosBarber/obj/Debug/net9.0/AncosBarber.csproj.AssemblyReference.cache
 /Users/luizribeiro/Desktop/Project-C#/SaaSAncosBarber/AncosBarber/obj/Debug/net9.0/AncosBarber.GeneratedMSBuildEditorConfig.editorconfig
@@ -129,3 +128,7 @@
 /Users/luizribeiro/Desktop/Project-C#/SaaSAncosBarber/AncosBarber/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Users/luizribeiro/Desktop/Project-C#/SaaSAncosBarber/AncosBarber/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll
 /Users/luizribeiro/Desktop/Project-C#/SaaSAncosBarber/AncosBarber/bin/Debug/net9.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/luizribeiro/Desktop/Project-C#/SaaSAncosBarber/AncosBarber/obj/Debug/net9.0/AncosBarber.sourcelink.json
+/Users/luizribeiro/Desktop/Project-C#/SaaSAncosBarber/AncosBarber/bin/Debug/net9.0/AutoMapper.dll
+/Users/luizribeiro/Desktop/Project-C#/SaaSAncosBarber/AncosBarber/bin/Debug/net9.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/luizribeiro/Desktop/Project-C#/SaaSAncosBarber/AncosBarber/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll

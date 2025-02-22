@@ -15,8 +15,7 @@ public class Bookings
     public Guid ServicesId { get; set; }
     
     [ForeignKey("AspNetUsers")]
-    public Guid UserId { get; set; }
+    public Guid UserId { get; set; } // IsCostumer = true
     
     public DateTime BookingDate { get; set; }
-
 }

@@ -1,5 +1,6 @@
-using AncosBarber.context;
-using AncosBarber.Models;
+using AncosBarber.DTOs;
+using AncosBarber.DTOs.ServiceDto;
+using AncosBarber.Repositories.UseCasesRepositories.ServicesRepositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AncosBarber.Controllers;
@@ -8,21 +9,58 @@ namespace AncosBarber.Controllers;
 [ApiController]
 public class ServicesController : ControllerBase
 {
-    private readonly AppDbContext _context;
+    private readonly IServicesRepository _repository;
 
-    public ServicesController(AppDbContext context)
+    public ServicesController(IServicesRepository repository)
     {
-        _context = context;
+        _repository = repository;
     }
 
-    [HttpPost]
-    public IActionResult Post(Services services)
+    [HttpPost] //att
+    public async Task<ActionResult<ServicesDto>> CreateServices(ServicesDto servicesDto)
     {
-        if (!ModelState.IsValid) return BadRequest(ModelState);
+        if (!ModelState.IsValid) return BadRequest("Dados inválidos.");
 
-        _context.Services.Add(services);
-        _context.SaveChanges();
+        var serviceCreated = await _repository.CreateService(servicesDto);
 
-        return Ok("Serviço Criado.");
+        return new CreatedAtRouteResult("GetService", new { id = serviceCreated.ServicesId }, serviceCreated);
+    }
+
+    
+    [HttpGet("GetServiceById/{id}", Name = "GetService")]
+    public async Task<ActionResult<ServicesDto>> GetServiceById(Guid id)
+    {
+        var service = await _repository.GetServiceById(id);
+
+        return Ok(service);
+    }
+
+
+    [HttpGet("GetServicesByBarberShopName")]
+    public async Task<ActionResult<IEnumerable<ServicesDto>>> GetServicesByBarberShopName(string name)
+    {
+        var services = await _repository.GetServicesByBarberShopName(name);
+
+        if (services.Count() <= 0) return NotFound("Nenhum serviço encontrado.");
+
+        return Ok(services);
+    }
+
+    [HttpPut("{id}")]
+    public async Task<ActionResult<ServicesDto>> UpdateService(Guid id, ServicesDto servicesDto)
+    {
+        if (!ModelState.IsValid || id != servicesDto.ServicesId) return BadRequest("Dados inválidos.");
+        
+        var serviceUpdated = await _repository.UpdateService(servicesDto);
+
+        return Ok(serviceUpdated);
+    }
+    
+    [HttpDelete("{id}")]
+    public async Task<ActionResult<ServicesDto>> DeleteService(Guid id)
+    {
+        var service = await _repository.GetServiceById(id);
+
+        return Ok($"Serviço {service.Name} deletado com sucesso.");
     }
 }

@@ -44,15 +44,15 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[14.0.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[9.0.2, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[9.0.2, )"
-            },
-            "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.2, )"
             },
@@ -69,6 +69,10 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[9.0.3, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[7.2.0, )"
             },
             "Swashbuckle.AspNetCore.SwaggerUI": {
               "target": "Package",

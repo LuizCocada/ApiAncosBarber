@@ -8,18 +8,23 @@ public class BarberShop
     public Guid BarberShopId { get; set; }
     
     [Required]
-    public string Name { get; set; } = string.Empty;
+    [MaxLength(40)]
+    public string? Name { get; set; } 
     
     [Required]
-    public string Address { get; set; } = string.Empty;
+    [MaxLength(150)]
+    public string? Address { get; set; }
     
     [Required]
-    public string PhoneNumber { get; set; } = string.Empty;
+    [MaxLength(20)]
+    public string? PhoneNumber { get; set; }
     
     [Required]
-    public string Email { get; set; } = string.Empty;
+    [MaxLength(100)]
+    public string? Email { get; set; }
     
-    public string ImageUrl { get; set; } = string.Empty;
+    [MaxLength(200)]
+    public string? ImageUrl { get; set; }
     
     public bool IsOpen { get; set; }
     
@@ -29,10 +34,13 @@ public class BarberShop
     
     public ICollection<Bookings>? Bookings { get; set; }
     
+    public ICollection<ApplicationUser>? Employees { get; set; } // IsCostumer = false
+    
     public BarberShop()
     {
         Services = new List<Services>();
         Bookings = new List<Bookings>();
+        Employees = new List<ApplicationUser>();
     }
 }
 

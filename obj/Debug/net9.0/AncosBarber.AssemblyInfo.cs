@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AncosBarber")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3f52b41a8fcf84f13d16671d50cc3179232cf2fe")]
 [assembly: System.Reflection.AssemblyProductAttribute("AncosBarber")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AncosBarber")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
