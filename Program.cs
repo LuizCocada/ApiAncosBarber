@@ -2,6 +2,10 @@ using System.Text;
 using AncosBarber.context;
 using AncosBarber.Extensions;
 using AncosBarber.Filters;
+using AncosBarber.Filters.Exceptions;
+using AncosBarber.Models;
+using AncosBarber.Providers.TokenProvider;
+using AncosBarber.Repositories.UseCasesRepositories.AuthRepository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +14,10 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers(options => { options.Filters.Add(typeof(ApiExceptionFilter)); });
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add(typeof(ApiExceptionFilter));
+});
 
 //habilitar autenticação JWT no swagger
 builder.Services.AddSwaggerGen(config =>
@@ -65,7 +72,8 @@ builder.Services.AddAuthentication(options =>
 });
 
 builder.Services.AddAplication();
-builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
+
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();

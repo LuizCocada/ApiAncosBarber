@@ -1,6 +1,6 @@
 namespace AncosBarber.DTOs.Authentication;
 
-public class Response
+public class StatusResponse
 {
     public string? Message { get; set; }
     

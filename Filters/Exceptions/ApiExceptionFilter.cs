@@ -1,8 +1,7 @@
-using AncosBarber.Filters.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace AncosBarber.Filters;
+namespace AncosBarber.Filters.Exceptions;
 
 public class ApiExceptionFilter : IExceptionFilter
 {

@@ -5,9 +5,11 @@ namespace AncosBarber.Providers.TokenProvider;
 
 public interface ITokenProvider
 {
-    JwtSecurityToken GenerateAccessToken(IEnumerable<Claim> claims);  
+    JwtSecurityToken GenerateAccessToken(IEnumerable<Claim> claims, IConfiguration _config);  
       
     string GenerateRefreshToken();  
       
-    ClaimsPrincipal GetPrincipalFromExpiredToken(string token);  
+    ClaimsPrincipal GetPrincipalFromExpiredToken(string token, IConfiguration _config);  
+    
+    
 }

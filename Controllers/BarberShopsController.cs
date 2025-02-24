@@ -11,7 +11,7 @@ public class BarberShopsController : ControllerBase
 {
     private readonly IBarberShopRepository _repository;
 
-    public BarberShopsController(IBarberShopRepository repository)
+    public BarberShopsController(IBarberShopRepository repository, ILogger<BarberShopsController> logger)
     {
         _repository = repository;
     }

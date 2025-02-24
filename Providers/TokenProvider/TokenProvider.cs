@@ -8,14 +8,7 @@ namespace AncosBarber.Providers.TokenProvider;
 
 public class TokenProvider : ITokenProvider
 {
-    private readonly IConfiguration _config;  
-  
-    public TokenProvider(IConfiguration config)  
-    {  
-        _config = config;  
-    }  
-  
-    public JwtSecurityToken GenerateAccessToken(IEnumerable<Claim> claims)  
+    public JwtSecurityToken GenerateAccessToken(IEnumerable<Claim> claims, IConfiguration _config)  
     {  
         var key = _config.GetSection("JWT").GetValue<string>("SecretKey") ??  
                   throw new InvalidOperationException("invalid Secret Key");  
@@ -50,7 +43,7 @@ public class TokenProvider : ITokenProvider
     }  
   
   
-    public ClaimsPrincipal GetPrincipalFromExpiredToken(string token)  
+    public ClaimsPrincipal GetPrincipalFromExpiredToken(string token, IConfiguration _config)  
     {  
         var secretKey = _config["JWT:SecretKey"] ?? throw new InvalidOperationException("Invalid secret key");  
   

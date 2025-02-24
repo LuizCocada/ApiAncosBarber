@@ -1,4 +1,4 @@
-namespace AncosBarber.DTOs.Authentication;
+namespace AncosBarber.DTOs.Authentication.Token;
 
 public class TokenModel
 {

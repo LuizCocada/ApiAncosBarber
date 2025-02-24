@@ -1,4 +1,4 @@
-namespace AncosBarber.DTOs.Authentication;
+namespace AncosBarber.DTOs.Authentication.Login;
 
 public class LoginModel
 {
